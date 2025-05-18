@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cattle", "Cattle", "{A8E186
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cattle.Domain", "src\Cattle\Cattle.Domain\Cattle.Domain.csproj", "{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "src\SharedKernel\SharedKernel.csproj", "{10EBAD55-C37A-4471-A9B8-64634F491079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10EBAD55-C37A-4471-A9B8-64634F491079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EBAD55-C37A-4471-A9B8-64634F491079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EBAD55-C37A-4471-A9B8-64634F491079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EBAD55-C37A-4471-A9B8-64634F491079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -28,6 +34,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A8E186C6-F76C-4A73-94FB-AB4FFD14FC02} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB} = {A8E186C6-F76C-4A73-94FB-AB4FFD14FC02}
+		{10EBAD55-C37A-4471-A9B8-64634F491079} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6AE305B-522A-4391-8127-CCFCE35CEFEF}
