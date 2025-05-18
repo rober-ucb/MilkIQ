@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1316A133-443B-40AF-A252-65AF7E54C36A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cattle", "Cattle", "{A8E186C6-F76C-4A73-94FB-AB4FFD14FC02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cattle.Domain", "src\Cattle\Cattle.Domain\Cattle.Domain.csproj", "{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A8E186C6-F76C-4A73-94FB-AB4FFD14FC02} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{A9AEC322-D3BE-43FB-84E3-3F03F5FBD3FB} = {A8E186C6-F76C-4A73-94FB-AB4FFD14FC02}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6AE305B-522A-4391-8127-CCFCE35CEFEF}
+	EndGlobalSection
+EndGlobal
