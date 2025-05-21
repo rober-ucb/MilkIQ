@@ -1,4 +1,6 @@
-﻿namespace Cattle.Domain.Aggregates.Cattle;
+﻿using Cattle.Domain.Enums;
+
+namespace Cattle.Domain.ValueObjects;
 
 /// <summary>
 /// Represents a weight measurement with a specified value and unit.

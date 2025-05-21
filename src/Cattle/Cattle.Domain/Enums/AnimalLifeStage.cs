@@ -1,4 +1,4 @@
-﻿namespace Cattle.Domain.Aggregates.Cattle;
+﻿namespace Cattle.Domain.Enums;
 
 public enum AnimalLifeStage
 {

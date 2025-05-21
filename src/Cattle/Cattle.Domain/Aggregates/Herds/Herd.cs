@@ -1,4 +1,4 @@
-﻿using Cattle.Domain.Aggregates.Cattle;
+﻿using Cattle.Domain.Aggregates.Animals;
 using SharedKernel.Abstractions;
 
 namespace Cattle.Domain.Aggregates.Herds;
@@ -24,9 +24,9 @@ public sealed class Herd : BaseEntity<int>, IAggregateRoot
     public static Herd Create(
         string name,
         string description,
-        ushort herdCapacity = 10)
+        ushort capacity = 10)
     {
-        return new Herd(name, description, herdCapacity);
+        return new Herd(name, description, capacity);
     }
     public void AddCattle(Animal animal)
     {

@@ -1,4 +1,6 @@
-﻿namespace Cattle.Domain.Aggregates.Cattle;
+﻿using Cattle.Domain.Enums;
+
+namespace Cattle.Domain.ValueObjects;
 
 /// <summary>
 /// Represents the life stage of an animal based on its date of birth.

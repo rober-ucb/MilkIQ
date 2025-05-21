@@ -1,13 +1,14 @@
 ﻿using Cattle.Domain.Aggregates.Herds;
 using Cattle.Domain.Entities;
+using Cattle.Domain.ValueObjects;
 using SharedKernel.Abstractions;
 
-namespace Cattle.Domain.Aggregates.Cattle;
+namespace Cattle.Domain.Aggregates.Animals;
 
 public class Cow : Animal, IAggregateRoot
 {
-    private Cow() : base() { } // For EF Core or any other ORM
-    private Cow(
+    public Cow() : base() { } // For EF Core or any other ORM
+    public Cow(
         Guid id,
         Herd herd,
         string earTag,
