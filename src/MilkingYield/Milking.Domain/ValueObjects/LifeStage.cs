@@ -24,6 +24,8 @@ public sealed record LifeStage
         int ageInMonths = (DateTime.UtcNow.Year - dateOfBirth.Year) * 12 + DateTime.UtcNow.Month - dateOfBirth.Month;
         AnimalLifeStage stage = ageInMonths switch
         {
+            < 0 => throw new ArgumentOutOfRangeException(nameof(dateOfBirth),
+                "Date of birth cannot be in the future."),
             >= 0 and < 1 => AnimalLifeStage.Newborn,
             < 6 => AnimalLifeStage.Calf,
             < 12 => AnimalLifeStage.Weaner,

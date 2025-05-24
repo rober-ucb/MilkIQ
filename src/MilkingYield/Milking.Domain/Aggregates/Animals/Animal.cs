@@ -8,11 +8,11 @@ namespace Cattle.Domain.Aggregates.Animals;
 
 public class Animal : BaseEntity<Guid>
 {
-    private const int EarTagLength = 5;
-    internal Animal() { } // For EF Core or any other ORM
+    private readonly List<Weight> _weightHistory = [];
+    internal protected Animal() { } // For EF Core or any other ORM
     internal protected Animal(
         Guid id,
-        string earTag,
+        EarTag earTag,
         Breed breed,
         LifeStage lifeStage,
         Herd? herd,
@@ -27,26 +27,38 @@ public class Animal : BaseEntity<Guid>
     }
 
     public static Animal Create(
-        string earTag,
+        EarTag earTag,
         Breed breed,
         DateTime dateOfBirth,
         Herd? herd,
         double? weight
         )
     {
-        if (earTag.Length is not EarTagLength)
-        {
-            throw new ArgumentException($"Ear tag must be {EarTagLength} characters long.", nameof(earTag));
-        }
         LifeStage lifeStage = new(dateOfBirth);
         Weight? currentWeight = weight is null ? null : new Weight(weight.Value, WeightUnit.Kg);
         return new Animal(Guid.NewGuid(), earTag, breed, lifeStage, herd, currentWeight);
     }
-    public string EarTag { get; private set; } = string.Empty;
+    public EarTag EarTag { get; private set; } = null!;
     public int BreedId { get; private set; }
-    public int? HerdId { get; private set; }
+    public Guid? HerdId { get; private set; }
     public LifeStage Stage { get; private set; } = null!;
     public Weight? CurrentWeight { get; private set; }
     public Guid? SireId { get; private set; } // Father
     public Guid? DamId { get; private set; } // Mother
+    public IReadOnlyList<Weight> WeightHistory => _weightHistory;
+
+    public void UpdateWeight(Weight weight)
+    {
+        _weightHistory.Add(weight);
+        CurrentWeight = weight;
+    }
+    public void SetParents(Guid? sireId, Guid? damId)
+    {
+        if (sireId is null && damId is null)
+        {
+            throw new ArgumentException("At least one parent must be specified.");
+        }
+        SireId = sireId;
+        DamId = damId;
+    }
 }
