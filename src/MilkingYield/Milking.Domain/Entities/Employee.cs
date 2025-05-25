@@ -2,7 +2,7 @@
 
 namespace Cattle.Domain.Entities;
 
-public class Operator : BaseEntity<string>
+public class Employee : BaseEntity<string>
 {
     public string Name { get; set; } = string.Empty;
     public string LastName { get; set;} = string.Empty;
