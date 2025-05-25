@@ -5,7 +5,7 @@ using SharedKernel.Abstractions;
 
 namespace Milking.Domain.Aggregates;
 
-public sealed class MilkingSession : BaseEntity<Guid>,IAggregateRoot
+public sealed class MilkingSession : BaseEntity<Guid>, IAggregateRoot
 {
     private readonly List<MilkingRecord> _milkingRecords = [];
     private MilkingSession(
@@ -27,13 +27,13 @@ public sealed class MilkingSession : BaseEntity<Guid>,IAggregateRoot
     public MilkingSessionStatus Status { get; private set; }
     public MilkingTime MilkingTime { get; private set; }
     public IReadOnlyList<MilkingRecord> MilkingRecords => _milkingRecords;
-    public static MilkingSession StartMilkingSession(MilkingTime timeOfDay, Guid employeeId)
+    public static MilkingSession StartSession(MilkingTime timeOfDay, Guid employeeId)
     {
         if (employeeId == Guid.Empty)
         {
             throw new ArgumentException("Employee ID cannot be empty.", nameof(employeeId));
         }
-        
+
         return new(Guid.NewGuid(), employeeId, timeOfDay);
     }
     public MilkingRecord RecordMilking(Guid cowId, MilkVolume milkVolume)
@@ -46,7 +46,7 @@ public sealed class MilkingSession : BaseEntity<Guid>,IAggregateRoot
         _milkingRecords.Add(milkingRecord);
         return milkingRecord;
     }
-    public void CompleteSession()
+    public void Complete()
     {
         if (Status is MilkingSessionStatus.Completed)
         {
@@ -59,7 +59,7 @@ public sealed class MilkingSession : BaseEntity<Guid>,IAggregateRoot
     {
         if (Status is not MilkingSessionStatus.Completed or MilkingSessionStatus.Cancelled)
         {
-           throw new InvalidOperationException("Session is still in progress.");
+            throw new InvalidOperationException("Session is still in progress.");
         }
         return (EndTime ?? DateTime.UtcNow) - StartTime;
     }

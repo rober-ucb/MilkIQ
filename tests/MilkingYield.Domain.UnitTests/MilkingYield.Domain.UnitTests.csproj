@@ -15,6 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\MilkingYield\Milking.Domain\Milking.Domain.csproj" />
+    <ProjectReference Include="..\..\src\SharedKernel\SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 

@@ -9,5 +9,4 @@ public sealed record MilkingTime
     {
 
     }
-    public string 
 }

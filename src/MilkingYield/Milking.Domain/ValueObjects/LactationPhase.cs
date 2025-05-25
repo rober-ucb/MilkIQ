@@ -11,17 +11,9 @@ public sealed record LactationPhase
         {
             throw new ArgumentException("Calving date cannot be in the future.");
         }
-        LactationStage currentPhase = DeterminePhaseBy(daysInMilk);
-        DateTime startDate = currentPhase switch
-        {
-            LactationStage.Fresh => calvingDate,
-            LactationStage.Peak => calvingDate.AddMonths(3),
-            LactationStage.Mid => calvingDate.AddMonths(5),
-            LactationStage.Late => calvingDate.AddDays(6),
-            LactationStage.Dry => calvingDate.AddDays(7),
-            _ => calvingDate
-        };
-        if (startDate > DateTime.UtcNow)
+        (LactationStage currentPhase, DateTime startDate) = DeterminePhaseBy(daysInMilk);
+        
+        if (StartDate > DateTime.UtcNow)
         {
             throw new ArgumentException("Start date cannot be in the future.");
         }
@@ -34,11 +26,14 @@ public sealed record LactationPhase
         StartDate = startDate;
         CalvingDate = calvingDate;
     }
-    private static LactationStage DeterminePhaseBy(short daysInMilk) => daysInMilk switch
+    private static (LactationStage, DateTime) DeterminePhaseBy(short daysInMilk) 
+        => daysInMilk switch
     {
-        >= 0 and <= 30 => LactationStage.Fresh,
-        >= 31 and <= 100 => LactationStage.Peak,
-        _ => LactationStage.Dry
+        >= 0 and <= 30 => (LactationStage.Fresh, DateTime.UtcNow.AddDays(60)),
+        >= 31 and <= 90 => (LactationStage.Peak, DateTime.UtcNow.AddDays(90)),
+        >= 91 and <= 150 => (LactationStage.Mid, DateTime.UtcNow.AddDays(150)),
+        >= 151 and <= 290 => (LactationStage.Late, DateTime.UtcNow.AddDays(290)),
+        _ => (LactationStage.Dry, DateTime.UtcNow.AddDays(365)),
     };
     public bool IsInPeakProduction => CurrentPhase == LactationStage.Peak;
     public bool IsInLactation => CurrentPhase != LactationStage.Dry;
