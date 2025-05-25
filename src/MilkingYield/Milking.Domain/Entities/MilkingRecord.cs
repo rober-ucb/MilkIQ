@@ -1,15 +1,13 @@
-﻿using Cattle.Domain.Aggregates.Animals;
-using Cattle.Domain.ValueObjects;
+﻿using Milking.Domain.ValueObjects;
 using SharedKernel.Abstractions;
 
-namespace Cattle.Domain.Entities;
+namespace Milking.Domain.Entities;
 
 public class MilkingRecord : BaseEntity<int>
 {
-    private MilkingRecord() { } // For EF Core or any other ORM
-    internal MilkingRecord(Cow cow, MilkVolume volume)
+    internal MilkingRecord(Guid cowId, MilkVolume volume)
     {
-        CowId = cow.Id;
+        CowId = cowId;
         Volume = volume;
         RecordedAt = DateTime.UtcNow;
     }

@@ -1,8 +1,8 @@
-﻿namespace Cattle.Domain.Enums;
+﻿namespace Milking.Domain.Enums;
 
 public enum MilkingSessionStatus
 {
     InProgress,
     Completed,
-    Cancelled,
+    Cancelled
 }

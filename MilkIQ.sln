@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedKernel", "src\SharedK
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milking.Domain", "src\MilkingYield\Milking.Domain\Milking.Domain.csproj", "{F36F98B3-42B4-1E80-8C18-BC5A34D66657}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilkingYield", "tests\MilkingYield\MilkingYield.csproj", "{672CDD33-FAC9-4943-947C-69994A7B34BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F36F98B3-42B4-1E80-8C18-BC5A34D66657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F36F98B3-42B4-1E80-8C18-BC5A34D66657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F36F98B3-42B4-1E80-8C18-BC5A34D66657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672CDD33-FAC9-4943-947C-69994A7B34BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672CDD33-FAC9-4943-947C-69994A7B34BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672CDD33-FAC9-4943-947C-69994A7B34BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672CDD33-FAC9-4943-947C-69994A7B34BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,6 +41,7 @@ Global
 		{A8E186C6-F76C-4A73-94FB-AB4FFD14FC02} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{10EBAD55-C37A-4471-A9B8-64634F491079} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F36F98B3-42B4-1E80-8C18-BC5A34D66657} = {A8E186C6-F76C-4A73-94FB-AB4FFD14FC02}
+		{672CDD33-FAC9-4943-947C-69994A7B34BE} = {1316A133-443B-40AF-A252-65AF7E54C36A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6AE305B-522A-4391-8127-CCFCE35CEFEF}

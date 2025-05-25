@@ -1,18 +1,9 @@
-﻿using Cattle.Domain.Enums;
+﻿using Milking.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
 
-namespace Cattle.Domain.ValueObjects;
+namespace Milking.Domain.ValueObjects;
 
-public record MilkVolume
-{
-    public MilkVolume(double amount, VolumeUnit unit)
-    {
-        if (amount < 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(amount), "Volume cannot be negative.");
-        }
-        Amount = amount;
-        Unit = unit;
-    }
-    public double Amount { get; init; }
-    public VolumeUnit Unit { get; init; }
-}
+public record MilkVolume(
+    [Range(0, double.MaxValue, ErrorMessage = "Volume cannot be negative.")]
+    double Amount,
+    VolumeUnit Unit);

@@ -1,7 +1,7 @@
-﻿namespace Cattle.Domain.Enums;
+﻿namespace Milking.Domain.Enums;
 
 public enum VolumeUnit
 {
-    Kg,
-    Liter,
+    Kgs,
+    Liters,
 }
